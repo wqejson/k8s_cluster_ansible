@@ -1,0 +1,33 @@
+---
+# tasks file for configure-worker-node
+
+- name: Remove default certificates
+  ansible.builtin.file:
+    path: /etc/kubernetes/kubelet.conf
+    state: absent
+
+- name: Remove default certificates
+  ansible.builtin.file:
+    path: /etc/kubernetes/bootstrap-kubelet.conf
+    state: absent
+
+- name: Remove default certificates
+  ansible.builtin.file:
+    path: /etc/kubernetes/pki/ca.crt
+    state: absent
+
+- name: get k8s join command
+  command: kubeadm token create --print-join-command
+  register: kubeadm_join_cmd
+  delegate_to: 34.118.92.252
+
+- set_fact:
+    kubeadm_join: "{{ kubeadm_join_cmd.stdout }}"
+ 
+- debug: var=kubeadm_join
+
+- name: Store join command
+  action: copy content="{{ kubeadm_join }}" dest="/etc/kubernetes/kubeadm-join.command"
+
+- name: join the k8s cluster
+  shell: "{{ kubeadm_join }} --ignore-preflight-errors=swap"

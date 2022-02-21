@@ -1,0 +1,11 @@
+[k8s-group]
+34.118.92.252   ansible_connection=ssh        ansible_user=deploy
+34.118.31.67    ansible_connection=ssh        ansible_user=deploy
+34.118.60.181   ansible_connection=ssh        ansible_user=deploy
+
+[k8s-master]
+34.118.92.252   ansible_connection=ssh        ansible_user=deploy
+
+[k8s-worker]
+34.118.31.67     ansible_connection=ssh        ansible_user=deploy
+34.118.60.181    ansible_connection=ssh        ansible_user=deploy

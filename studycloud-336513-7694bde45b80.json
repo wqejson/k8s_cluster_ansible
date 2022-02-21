@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "studycloud-336513",
+  "private_key_id": "7694bde45b80868be9a7e1610ea3ab85d436eb86",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC/IbvjTw4sCwlM\nEEeSn3dyoR/gJ7OnneHU6mmDQjSuEG3ChioIa0C+gZcZZ2exBGL5KsINGvIsfT3u\nd1vf7v+Fi28xmTtWE7djba/L1p1J4Lht3dEvA/6sfTD5PR7bAoXqGItXXbrvgKgN\njDLPDRStjBqDZNEZZcBQbv0gVvI8qb38nmwmkOfNC7LLqcsJI05Vcr70UL0ZBcaM\np81e8Lqh7izYb2IjU2bVvBoZyyHnyPHzGNZVyYgQxJEG5w6GJmeqRpk/2N94chPf\nqJOnF0A2c+ZApZltntOX5Oadj2HIT3zj3U+Y1lNf9t2Ob0woON0MRVfsgNu11ZLT\n+zthXI1hAgMBAAECggEABtJKZWN16wZ9z3QpScddOP8dJx/jnpDY9YNkPqYHQUse\nz7mAGIrTZbk0TljNb5jre18WS+dxSzsxEai647Qg9IA0eL2yS3Eqs2a/xnOja3aU\nvn8TLy1iUn+pVsvipQhjBSbZGkYjHNcnqEwfqBocadE9RQE9IT3rbjN330abIKUS\nV3wczjATz9/fGkA2vano2z/trs823tblI4SKxlV91S1Wf4G89SDWJB/W6XgFekiF\nTmoTFtS0XSia/B2boeKYQbxEJljxKB+cOpec7RBShACPtN1w11sMmQKlRIu4OiX7\nFe0dYpAU2Dn110igNdiqe3loNaBWQqvPJrGcB+p9zQKBgQD464BKw6wmMwqrWsPR\nzVrjcSlq/wuAXD80k/tkLlYUx3lCLh4ji4g9/08ArARQbJBRIyIuK5DdO7D73DTj\n93klGJbjhrAvq0YcpgSiMVvX2sxCXAzHOd2McdglkuUbToOaGHoyYADTg7mfITV1\nS/es1PE6RNShtAi7/EJjiQaAbwKBgQDEkXN37VvWEt6qLXGFc0+/lmH2FHl6reqU\nxZiRlwTLbjGILb04Jm1xL/UHxhvdmMXAjzzeIiUOAfQnv7MtyWz/jOw/V6FabKnn\nAS6qyqML8q9xY/qXO1GlRI8vrFJpu41dfxRi+dmdKKfW3JfpMi9r9avtmnqoqJeO\nqTuOBO8XLwKBgQCx2kKeKNUVrh6PdJi5jQrFu5MmWfjzy/V1Mc7LM7hZvHTNbnom\nV4oPEh52knG6rPcoofvIFWS6Te4U5q/7ulSaxsj45MF6Ldw4l/5zjOTcg/6x42dV\n6eh8ctNHdX+xVRX+wkJ9P88XUeUM6AN0PcVHfhal1Yw/xY0AFCuzRrKYjQKBgHD5\n9Dayen0AnW+L7No5m1VPNoB75hInkVLuerD67muJqvhM6ZszIuXSHW/ZYjyryMTS\nzrYRQ+DYKJ8L5Azl3zrFoScK05coK0K1AEBzdOCyHDn8r5NqKZPmYrGQxlE01Zwu\nJOZ6GaPlMQoiAUGrcWwIaEeI6QS02V7KT4thtJVLAoGBAMHoYE1p8Tezn/4XYI5P\nsDgO001LiCXdeJBsAwYlH2uwoMG6JlWZJdqRo5CjeOUxogq/ABdVv1LhcWWmGjHJ\nShTDT6ElTK906+gaoWFH7qaTVk9cnZJASPvYsMUMaZrggc49gwJ3pGUsG0j9632C\nJ2BzzJKE3VzaEXlQDOoPppST\n-----END PRIVATE KEY-----\n",
+  "client_email": "test-k8s-cluster@studycloud-336513.iam.gserviceaccount.com",
+  "client_id": "111449397180913182483",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/test-k8s-cluster%40studycloud-336513.iam.gserviceaccount.com"
+}

@@ -1,0 +1,100 @@
+---
+# tasks file for configure-firewall
+
+#CHECK IF THE FIREWALL IS RUNNING
+
+- name: Install firewalld
+  become: yes
+  package:
+    name: firewalld
+    state: "present"
+
+- name: Start and set up firewalld
+  become: yes
+  service:
+    name: firewalld
+    enabled: yes
+    state: started
+
+
+#CONFIGURE MASTER NODE FIREWALL RULES
+
+- name: Configure Master firewall Rules
+  ansible.posix.firewalld:
+    port: 6443/tcp
+    permanent: yes
+    state: enabled
+  when: inventory_hostname == "master-group"
+
+  
+- name: Configure Master firewall Rules
+  ansible.posix.firewalld:
+    port: 2379-2380/tcp
+    permanent: yes
+    state: enabled
+  when: inventory_hostname == "master-group"
+
+
+- name: Configure Master firewall Rules
+  ansible.posix.firewalld:
+    port: 10250/tcp
+    permanent: yes
+    state: enabled
+
+
+- name: Configure Master firewall Rules
+  ansible.posix.firewalld:
+    port: 10251/tcp
+    permanent: yes
+    state: enabled
+  when: inventory_hostname == "master-group"
+
+
+- name: Configure Master firewall Rules
+  ansible.posix.firewalld:
+    port: 10259/tcp
+    permanent: yes
+    state: enabled
+  when: inventory_hostname == "master-group"
+
+  
+- name: Configure Master firewall Rules
+  ansible.posix.firewalld:
+    port: 10257/tcp
+    permanent: yes
+    state: enabled
+  when: inventory_hostname == "master-group"
+
+#WORKER FIREWALL RULES
+
+- name: Worker's firewall rules
+  ansible.posix.firewalld:
+    port: 30000-32767/tcp
+    permanent: yes
+    state: enabled
+  when: inventory_hostname == "worker-group"
+
+#SERVICES FIREWALL RULES
+- name: Configure Master firewall Rules
+  ansible.posix.firewalld:
+    service: kube-apiserver 
+    permanent: yes
+    state: enabled
+
+- name: Configure Master firewall Rules
+  ansible.posix.firewalld:
+    service: etcd-client
+    permanent: yes
+    state: enabled
+
+- name: Configure Master firewall Rules
+  ansible.posix.firewalld:
+    service: etcd-server 
+    permanent: yes
+    state: enabled
+
+#SHOW ALL FIREWALL RULES
+
+# - name: Print firewall configuration
+#   debug: msg="{{ check_firewalld.stdout_lines }}"
+#   when: firewalld_debug

@@ -1,0 +1,11 @@
+---
+
+- name: All Nodes Config
+  become: true
+  hosts: 
+    - k8s-group
+  roles:
+    - { role: container-networking-config, tags: ["k8s_nodes_config"] }
+    - { role: configure-nodes, tags: ["k8s_nodes_config"]}
+    - { role: configure-firewall, tags: ["k8s_nodes_config"]}
+    - { role: package-install, pkgs: ["kubelet", "kubeadm", "kubectl"], tags: ["k8s_master_config"] }

@@ -1,0 +1,9 @@
+---
+
+- name: Master Node Config
+  become: true
+  remote_user: root
+  hosts: 
+    - k8s-master
+  roles:
+    - { role: configure-k8s-master-node, tags: ["k8s_master_config"]}

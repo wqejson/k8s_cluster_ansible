@@ -1,0 +1,22 @@
+---
+# task to configure containerd (delete the config file :D )
+
+- name: Remove confing.toml file which is causing an error with kubeadm
+  ansible.builtin.file:
+    path: /etc/containerd/config.toml
+    state: absent
+
+#THESE THINGS SHOULD BE LOCATED IN HANDLERS FILE
+
+- name: Enable service httpd, and not touch the state
+  ansible.builtin.service:
+    name: containerd
+    enabled: yes
+
+
+- name: Restart ContainerD service
+  ansible.builtin.service:
+    name: containerd
+    state: restarted
+
+#THESE THINGS SHOULD BE LOCATED IN HANDLERS FILE

@@ -1,0 +1,48 @@
+---
+# tasks file for configure-nodes
+
+#turn off swap
+- name: 💽 turn off the swap for the current session 💽
+  command: swapoff -a
+  become: true
+
+- name: 💽 Remove swapfile from /etc/fstab 💽 
+  mount:
+    name: "{{ item }}"
+    fstype: swap
+    state: absent
+  with_items:
+    - swap
+
+#Disable Selinux
+- name: Put SELinux in permissive mode, logging actions that would be blocked.
+  ansible.posix.selinux:
+    policy: targeted
+    state: permissive
+
+
+#add hosts file
+- name: 🤖 Configure nodes hosts file 🤖
+  template:
+    src: "templates/hosts.conf.j2"
+    dest: "/etc/hosts"
+    owner: root
+    group: root
+    mode: "0644"
+
+- name: Add  kubernetes module
+  template:
+    src: "templates/kubernetes.repo"
+    dest: "/etc/yum.repos.d/kubernetes.repo"
+    owner: root
+    group: root
+    mode: "0644"
+
+- name: Install Kubernetes parts
+  dnf:
+    name: 
+      - kubelet
+      - kubectl
+      - kubeadm
+    state: present
+    disable_excludes: kubernetes 

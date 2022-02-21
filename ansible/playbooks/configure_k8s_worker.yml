@@ -1,0 +1,8 @@
+---
+
+- name: Worker Node Config
+  become: true
+  hosts: 
+    - k8s-worker
+  roles:
+    - { role: configure-k8s-worker-node , tags: ["k8s_worker_config"]}

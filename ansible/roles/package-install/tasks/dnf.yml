@@ -1,0 +1,7 @@
+---
+
+- name: dnf install "{{ pkgs }}"
+  dnf:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ pkgs }}"
